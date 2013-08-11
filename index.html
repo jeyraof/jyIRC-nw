@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" contents="width=device-width, initial-scale=1.0">
+        <meta name="description" content="test app">
+        <meta name="author" content="Jaeyoung Lee">
+
+        <title>test</title>
+
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="bootstrap.min.js"></script>
+
+        <script>
+        var irc = require('irc');
+        var client = new irc.Client('irc.ozinger.org', 'jybots', {
+            channels: ['#freyja'],
+        });
+        </script>
+    </head>
+
+    <body>
+        <div id="wrap">
+            <section id="channels">
+                <ul>
+                    <li class="server">
+                        Ozinger
+                    </li>
+                    <li>
+                        <h5>
+                            <span class="channel" name="stackoverflow">#stackoverflow</span>
+                        </h5>
+                    </li>
+                    <li>
+                        <h5>
+                            <span class="channel" name="transmission">#transmission</span>
+                        </h5>
+                    </li>
+                    <li class="active">
+                        <h5>
+                            <span class="channel" name="earthreader">#earthreader</span>
+                        </h5>
+                    </li>
+                    <li>
+                        <h5>
+                            <div class="channel pull-left">
+                                <span name="swmaestro3rd">#swmaestro3rdlskdjlakskdf</span>
+                            </div>
+                            <span class="label label-danger pull-right">N</label>
+                        </h5>
+                    </li>
+                </ul>
+            </section>
+            <section id="mainCenter">
+                <article class="chat">asdf</article>
+            </section>
+            <section class="userlist"></section>
+        </div>
+    </body>
+
+</html>

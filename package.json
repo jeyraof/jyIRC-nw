@@ -1,0 +1,19 @@
+{
+    "main": "index.html",
+    "name": "irc",
+    "description": "app test for node-webkit with IRC",
+    "version": "0.1.0",
+    "keyword": ["irc", "node-webkit"],
+    "window": {
+        "title": "node-webkit IRC",
+        
+        "toolbar": true,
+        "frame": false,
+        "width": 900,
+        "height": 600,
+        "position": "mouse"
+    },
+    "webkit": {
+        "plugin": true
+    }
+}
