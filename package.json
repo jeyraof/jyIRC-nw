@@ -6,9 +6,8 @@
     "keyword": ["irc", "node-webkit"],
     "window": {
         "title": "node-webkit IRC",
-        
+        "frame": false,        
         "toolbar": true,
-        "frame": false,
         "width": 900,
         "height": 600,
         "position": "mouse"

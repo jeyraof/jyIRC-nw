@@ -16,7 +16,17 @@
         <script>
         var irc = require('irc');
         var client = new irc.Client('irc.ozinger.org', 'jybots', {
+            userName: 'jyirc-nw',
+            realName: 'jyIRC NW client',
+            port: 6667,
+            debug: false,
+            autoRejoin: true,
+            autoConnect: true,
             channels: ['#freyja'],
+            channelPrefixes: "&#"
+        });
+        client.addListener('message', function(from, to, message) {
+            $('#messages').append('<div>'+message+'</div>');
         });
         </script>
     </head>
@@ -53,10 +63,34 @@
                     </li>
                 </ul>
             </section>
-            <section id="mainCenter">
-                <article class="chat">asdf</article>
+            <section id="userlist">
+                what?
             </section>
-            <section class="userlist"></section>
+            <section id="mainCenter">
+                <article id="chatBox">
+                    <section id="topic">
+                        <input type="text" value="#hongminhee 초대는 아무나 가능 | 인명록 http://goo.gl/9anzN | Wand 0.3.3 릴리즈 http://docs.wand-py.org/en/0.3.3/changes.html#version-0-3-3 | SQLAlchemy-ImageAttach 0.8.0 릴리즈 https://sqlalchemy-imageattach.readthedocs.org/en/latest/changes.html#version-0-8-0">
+                    </section>
+                    <div id="messageLogBox">
+                    <section id="messages">
+                        <table id="log">
+                            <tr>
+                                <td class="nickname">Jaeyoung</td>
+                                <td class="contents">
+                                    Test
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    </div>
+                    <section id="messageBox">
+                        <div class="input-group">
+                            <span class="input-group-addon input-sm">Jaeyoung</span>
+                            <input type="text" class="form-control input-sm" placeholder="Message">
+                        </div>
+                    </section>
+                </article>
+            </section>
         </div>
     </body>
 
