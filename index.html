@@ -26,7 +26,32 @@
             channelPrefixes: "&#"
         });
         client.addListener('message', function(from, to, message) {
-            $('#messages').append('<div>'+message+'</div>');
+            var msg = "<div>"+message+"</div>";
+            var date = new Date();
+            var now = "";
+            if (date.getHours() > 12) {
+                now = date.getHours()-12+":"+date.getMinutes()+" PM";
+            } else {
+                now = date.getHours()+":"+date.getMinutes()+" AM";
+            }
+
+            var prev = $('table#log tr').last();
+            var prev_nick = $.trim($('table#log tr').last().children('td.nickname').text());
+            if (prev_nick == from) { 
+                var date = prev.find('small');
+                date.before(msg);
+                date.html(now);
+            }
+            else {
+                var content = "<tr> \
+                    <td class=\"nickname\">"+from+"</td> \
+                    <td class=\"contents\"> \
+                        <blockquote>"+msg+" \
+                        <small>"+now+"</small> \
+                        </blockquote> \
+                </tr>";
+                $('table#log').append(content);
+            }
         });
         </script>
     </head>
@@ -73,14 +98,7 @@
                     </section>
                     <div id="messageLogBox">
                     <section id="messages">
-                        <table id="log">
-                            <tr>
-                                <td class="nickname">Jaeyoung</td>
-                                <td class="contents">
-                                    Test
-                                </td>
-                            </tr>
-                        </table>
+                        <table id="log"></table>
                     </section>
                     </div>
                     <section id="messageBox">

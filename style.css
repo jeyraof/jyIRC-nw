@@ -111,20 +111,31 @@ section#messageBox {
 
 section#messages table#log {
     width:100%;
-    margin:0;
+    margin-top:5px;
+}
+
+table#log tr {
+    border-bottom:1px dotted #ccc;
 }
 
 table#log td {
     font-size:9pt;
+    padding:5px;
 }
 
 table#log td.nickname {
-    padding:5px;
+    text-align:right;
+    vertical-align:top;
     font-weight:bold;
 }
 
 table#log td.contents {
     width:100%;
+}
+
+table#log td.contents blockquote {
+    padding:0 10px;
+    margin:0;
 }
 
 input.input-bot {
